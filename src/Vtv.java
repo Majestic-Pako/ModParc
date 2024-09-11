@@ -45,7 +45,7 @@ public class Vtv {
 	}
 
 	public static String Elecciones(String seccion) {
-		int x = JOptionPane.showConfirmDialog(null, "Indique el resultado de la prueba " + seccion, seccion,
+		int x = JOptionPane.showConfirmDialog(null, "¿Aprobo la prueba de? " + seccion, seccion,
 				JOptionPane.YES_NO_CANCEL_OPTION);
 		if (x == JOptionPane.YES_OPTION) {
 			return "Aceptado";
