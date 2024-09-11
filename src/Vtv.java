@@ -28,8 +28,8 @@ public class Vtv {
 	public void setAuto(String auto) {
 		this.auto = auto;
 	}
-	public static String Elecciones() {
-		 int x = JOptionPane.showConfirmDialog(null, "Indique si paso la prueba del Motor","Revision 1",JOptionPane.YES_NO_CANCEL_OPTION);
+	public static String Elecciones(String seccion) {
+		 int x = JOptionPane.showConfirmDialog(null, "Indique el resulatdo de la prueba "+ seccion + " ¿Estado?",seccion, JOptionPane.YES_NO_CANCEL_OPTION);
 		 if (x == JOptionPane.YES_OPTION) {
 	            return "Aceptado";
 	        } else if (x == JOptionPane.NO_OPTION) {

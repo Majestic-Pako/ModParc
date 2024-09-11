@@ -6,9 +6,11 @@ public class Main {
 		
 		Vtv vehiculo = new Vtv("");
 		Vtv Motor = new Vtv("");
+		Vtv Frenos = new Vtv("");
 		int opcion;
 		String auto;
 		String motor;
+		String frenos;
 		JOptionPane.showMessageDialog(null, "Bienvenido a la VTV ingrese el vehiculo \n Ingrese como se encuentra el estado del auto");
 		do {
 			String convertir[]= {"Registro de autos", "Inspeccion", "Salir"};
@@ -24,11 +26,14 @@ public class Main {
 				}while(!ValidarNombre(auto));
 				vehiculo.setAuto(auto);
 				JOptionPane.showMessageDialog(null, "Vehiculo registrado  "+ vehiculo.getAutos());
-				JOptionPane.showMessageDialog(null, "Notifique si paso la prueba del motor");
-				motor = Vtv.Elecciones();
+				motor = Vtv.Elecciones("Motor");
                 Motor.setDatos(motor);
-                String res = "El vehículo " + vehiculo.getAutos() + " tiene un estado de motor: " + Motor.getDatos();
+                
+                frenos = Vtv.Elecciones("frenos");
+                Frenos.setDatos(frenos);
+                String res = "El vehículo " + vehiculo.getAutos() + " tiene un estado de motor: " + Motor.getDatos() + "y"+Frenos.getDatos();
                 JOptionPane.showMessageDialog(null, res);
+                
 				break;
 			case 2: 
 				JOptionPane.showMessageDialog(null, "c");
