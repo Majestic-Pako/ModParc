@@ -5,7 +5,10 @@ import javax.swing.JOptionPane;
 public class Main {
 
 	public static void main(String[] args) {
-		
+		Proyecto Nombre = new Proyecto("");
+		Proyecto Ubicacion = new Proyecto("");
+		Proyecto Cliente = new Proyecto("");
+		Proyecto Fecha =new Proyecto("");
 		JOptionPane.showMessageDialog(null, "Bienvenido a la ConstructoraArg ");
 		int opcion;
 		do {
@@ -16,19 +19,36 @@ public class Main {
 					convertir[0]);
 			switch (opcion) {
 			case 0:
-				JOptionPane.showMessageDialog(null, "a");
-				break;
+				do {
+					String nombre = JOptionPane.showInputDialog("Ingresa el nombre del proyecto");
+					Nombre.setRegistro(nombre);
+				}while(!Nombre.Pro());
+				do {
+					String ubicacion = JOptionPane.showInputDialog("Ingese donde es el proyecto");
+					Ubicacion.setRegistro(ubicacion);
+				}while(!Ubicacion.Pro());
+				do {
+					String cliente = JOptionPane.showInputDialog("Ingrese nombre de su cliente");
+					Cliente.setRegistro(cliente);
+				}while(!Cliente.Pro());
+				Fecha.Day();
+				JOptionPane.showMessageDialog(null, "Nombre del proyecto: " + Nombre.getRegistro()+ 
+								"\nUbicacion del Proyecto: " + Ubicacion.getRegistro()+ 
+								"\nNombre del Cliente: " + Cliente.getRegistro() + 
+								"\nFecha de Inicio: "+ Fecha.getFecha());
+				
+					break;
 			case 1: 
-				JOptionPane.showMessageDialog(null, "b");
+				JOptionPane.showMessageDialog(null, "En proceso...");
 				break;
 			case 2: 
-				JOptionPane.showMessageDialog(null, "c");
+				JOptionPane.showMessageDialog(null, "En proceso...");
 				break;
 			case 3:
-				JOptionPane.showMessageDialog(null, "d");
+				JOptionPane.showMessageDialog(null, "En proceso...");
 				break;
 			case 4:
-				JOptionPane.showMessageDialog(null, "e");
+				JOptionPane.showMessageDialog(null, "Cerrando sesion...");
 				break;
 			}
 		}while( opcion != 4);
