@@ -21,7 +21,8 @@ public class Main {
 					convertir[0]);
 			switch (opcion) {
 			case 0:
-				JOptionPane.showMessageDialog(null, "a");
+				JOptionPane.showMessageDialog(null, "El Vehiculo: "+vehiculo.getAutos()+
+												"\nInforme: " +vehiculo.getRegistro());
 				break;
 			case 1:
 				do {
@@ -47,7 +48,7 @@ public class Main {
 				JOptionPane.showMessageDialog(null, fin);
 				break;
 			case 2:
-				JOptionPane.showMessageDialog(null, "Adios...");
+				JOptionPane.showMessageDialog(null, "Informe Terminado. Hasta pronto.");
 				break;
 			}
 		} while (opcion != 2);
