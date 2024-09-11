@@ -13,7 +13,9 @@ public class Vtv {
 	}
 
 	public void AgReg(String registro) {
-		this.registro = registro + auto + " Registrado  " + LocalDate.now();
+		LocalDate fecha = LocalDate.now();
+		this.registro = registro + auto + " Paso la Vtv "+ "\nEl dia " + fecha + 
+						"\nProxima inspeccion: " + fecha.plusYears(1) ;
 	}
 
 	public String getRegistro() {
@@ -47,6 +49,14 @@ public class Vtv {
 			return "No se selecciono ninguna opcion";
 		}
 
+	}
+	public String Final(String motor, String frenos, String suspension) {
+		if(motor.equals("Aceptado") && frenos.equals("Aceptado") && suspension.equals("Aceptado")) {
+			this.AgReg("El vehiculo: ");
+			return this.getRegistro();
+		}else {
+			return "No paso las pruebas de la Vtv";
+		}
 	}
 
 }

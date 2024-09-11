@@ -39,10 +39,12 @@ public class Main {
 				Suspension.setDatos(suspension);
 
 				String res = "Vehículo " + vehiculo.getAutos() + "\nPruebas Realizadas: " + "\nEstado de motor: "
-						+ Motor.getDatos() + "\nEstado de Frenos: " + Frenos.getDatos() + "\nEstado de Suspension "
+						+ Motor.getDatos() + "\nEstado de Frenos: " + Frenos.getDatos() + "\nEstado de Suspension: "
 						+ Suspension.getDatos();
 				JOptionPane.showMessageDialog(null, res);
-
+				
+				String fin = vehiculo.Final(motor, frenos, suspension);
+				JOptionPane.showMessageDialog(null, fin);
 				break;
 			case 2:
 				JOptionPane.showMessageDialog(null, "Adios...");
