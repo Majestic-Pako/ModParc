@@ -1,10 +1,9 @@
 import java.time.LocalDate;
 
 import javax.swing.JOptionPane;
-
 public class Vtv {
 	private String auto;
-	private int datos;
+	private String datos;
 	private String registro;
 	
 	public Vtv(String auto) {
@@ -12,7 +11,7 @@ public class Vtv {
 		this.registro = "";
 	}
 	public void AgReg(String registro) {
-		this.registro = registro + registro + " dia " + LocalDate.now();
+		this.registro = registro + auto + " Registrado  " + LocalDate.now();
 	}
 	public String getRegistro(){
 		return this.registro;
@@ -20,12 +19,25 @@ public class Vtv {
 	public String getAutos() {
 		return this.auto;
 	}
-	public void setDatos(int datos) {
+	public String getDatos() {
+		return this.datos;
+	}
+	public void setDatos(String datos) {
 		this.datos = datos;
 	}
 	public void setAuto(String auto) {
 		this.auto = auto;
 	}
-
+	public static String Elecciones() {
+		 int x = JOptionPane.showConfirmDialog(null, "Indique si paso la prueba del Motor","Revision 1",JOptionPane.YES_NO_CANCEL_OPTION);
+		 if (x == JOptionPane.YES_OPTION) {
+	            return "Aceptado";
+	        } else if (x == JOptionPane.NO_OPTION) {
+	        	return "Rechazado";
+	        } else {
+	        	return "No se selecciono ninguna opcion";
+	        }
+		
+	}
 	
 }

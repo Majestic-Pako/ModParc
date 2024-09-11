@@ -3,9 +3,12 @@ import javax.swing.JOptionPane;
 public class Main {
 
 	public static void main(String[] args) {
-		int opcion;
+		
 		Vtv vehiculo = new Vtv("");
+		Vtv Motor = new Vtv("");
+		int opcion;
 		String auto;
+		String motor;
 		JOptionPane.showMessageDialog(null, "Bienvenido a la VTV ingrese el vehiculo \n Ingrese como se encuentra el estado del auto");
 		do {
 			String convertir[]= {"Registro de autos", "Inspeccion", "Salir"};
@@ -20,7 +23,12 @@ public class Main {
 					 auto = JOptionPane.showInputDialog("Ingresa la marca del auto");
 				}while(!ValidarNombre(auto));
 				vehiculo.setAuto(auto);
-				JOptionPane.showMessageDialog(null, "b"+ vehiculo.getAutos());
+				JOptionPane.showMessageDialog(null, "Vehiculo registrado  "+ vehiculo.getAutos());
+				JOptionPane.showMessageDialog(null, "Notifique si paso la prueba del motor");
+				motor = Vtv.Elecciones();
+                Motor.setDatos(motor);
+                String res = "El vehículo " + vehiculo.getAutos() + " tiene un estado de motor: " + Motor.getDatos();
+                JOptionPane.showMessageDialog(null, res);
 				break;
 			case 2: 
 				JOptionPane.showMessageDialog(null, "c");
@@ -29,7 +37,7 @@ public class Main {
 		}while(opcion != 2);
 	}
 	public static boolean ValidarNombre(String auto) {
-		if (auto.isEmpty() || auto.length() < 3 || auto.length() > 20) {
+		if (auto.isEmpty() || auto.length() < 3 || auto.length() > 25) {
 			JOptionPane.showMessageDialog(null, "ERROR en la Cantidad de caracteres");
 			return false;
 		} else {
@@ -39,7 +47,7 @@ public class Main {
 					return false;
 				}
 			}
-			JOptionPane.showMessageDialog(null, "Usuario valido");
+			JOptionPane.showMessageDialog(null, "Marca valida");
 			return true;
 		}
 	}
