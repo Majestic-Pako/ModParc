@@ -33,7 +33,7 @@ public class Main {
 				String motor = Vtv.Elecciones("Motor");
 				Motor.setDatos(motor);
 
-				String frenos = Vtv.Elecciones("frenos");
+				String frenos = Vtv.Elecciones("Frenos");
 				Frenos.setDatos(frenos);
 
 				String suspension = Vtv.Elecciones("Sistema de Suspension");
