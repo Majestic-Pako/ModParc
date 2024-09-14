@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 public class Proyecto {
 	private String registro;
 	private LocalDate fecha;
+	private int numero;
 
 	public Proyecto(String registro) {
 		this.registro = registro;
@@ -24,7 +25,13 @@ public class Proyecto {
 	public LocalDate getFecha() {
 		return this.fecha;
 	}
-
+	
+	public int getNumero() {
+		return this.numero;
+	}
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
 	public boolean Pro() {
 		if (registro.isEmpty() || registro.length() < 3 || registro.length() > 30) {
 			JOptionPane.showMessageDialog(null, "ERROR");
@@ -48,5 +55,13 @@ public class Proyecto {
 		int dia = x.nextInt(28) + 1;
 		this.fecha = LocalDate.of(año, mes, dia);
 	}
-
+	public boolean Num() {
+		if(numero >= 1 && numero <=10) {
+			JOptionPane.showMessageDialog(null, "Calificacion Registrada");
+			return true;
+		}else {
+			JOptionPane.showMessageDialog(null, "No cumple las condiciones pedidas");
+			return false;
+		}
+	}
 }
